@@ -1,0 +1,40 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}Страница 2{% endblock %}
+
+{% block content %}
+<h1>Добро пожаловать на страницу 2</h1>
+<br>
+<p>Django и Flask используют один шаблонизатор — Jinja. При работе мы будем перемещаться среди html-страниц.
+
+Для работы с Jinja нужен файл, который будет являться основой, заготовкой, шаблоном. Есть два распространённых варианта его названия: base.html и layoute.html. В этот файл мы вынесем повторяющиеся части файлов.
+
+В папке main, содержащей html-файлы, создаём файл layoute.html.
+
+Создаём блоки, которые будут заполняться:
+
+
+<div style="background:#f5f5f5; padding:20px; border-radius:8px; font-family: monospace; white-space: pre;">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt;
+
+      % block title %    # все блоки в фигурных скобках{}
+
+      %endblock %
+&lt;/head&gt;
+&lt;body&gt;
+    % block content %
+
+     % endblock %
+&lt;/body&gt;
+&lt;/html&gt;
+
+</div>
+</p>
+{% endblock %}
+
+

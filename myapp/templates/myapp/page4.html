@@ -1,0 +1,64 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+{% block title %}Страница 4{% endblock %}
+
+{% block content %}
+<h1>Добро пожаловать на страницу 4</h1>
+<br>
+
+<p>Разберёмся со статическими файлами, которые также можно здесь использовать.
+
+Статические файлы — css, Bootstrap.
+
+Особенности работы со статическими файлами:
+
+статические файлы нужно помещать в отдельную, специальную папку — static;
+в этой папке нужно создать папку, имеющее то же имя, что и приложение. Причины те же, что и в случае папки templates (чтобы при слиянии папок файлы не замещали друг друга, не путались).
+Создаём папку static и все необходимые папки внутри неё.
+
+
+Создаём css-файл внутри папки css.</p>
+<br>
+
+     <img src="{% static 'myapp/img/img.png' %}" width="350px">
+<br>
+
+<p>В css- файле прописываем стиль.</p>
+
+<br>
+<pre>
+<div style="background:#f5f5f5; padding:20px; border-radius:8px; font-family: monospace; white-space: pre;">
+
+body{
+    background-color: deeppink;
+}
+</div>
+</pre>
+
+<p>В шаблоне layoute.html прописываем подключение css-файла. В начале прописываем подгрузку статических файлов.</p>
+<br>
+<pre>
+<div style="background:#f5f5f5; padding:20px; border-radius:8px; font-family: monospace; white-space: pre;">
+
+% load static %          # все знаки  с % в фигурных скобках   {}
+&lt;! doctype html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt;
+    &lt;link rel="stylesheet" href=" % static 'main/css/main.css' % "&gt;
+    % block title %
+    % endblock %
+&lt;/head&gt;
+&lt;body&gt;
+    % block content %
+    % endblock %
+&lt;/body&gt;
+&lt;/html&gt;
+
+</div>
+</pre>
+
+{% endblock %}

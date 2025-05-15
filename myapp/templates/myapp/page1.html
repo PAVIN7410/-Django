@@ -1,0 +1,32 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+{% block title %}Страница 1{% endblock %}
+
+{% block content %}
+<h1>Добро пожаловать на страницу 1</h1>
+<br><br>
+  <h3>        Урок номер 2 по изучению фреймворка Django!
+</h3><br>
+<p>Используем функцию, которая больше подходит для отображения целых html-страниц. Django, как и Flask, требует хранить html-файлы в папке templates, но эту папку нужно создавать внутри main.
+В официальной документации Django сказано, что внутри папки templates должна быть ещё одна папка, которая называется в точности так же, как приложение, а уже внутри этой папки — html-файлы.
+</p>
+    <br>
+
+     <img src="{% static 'myapp/img/img_1.png' %}" width="350px">
+<br>
+<br>
+
+ <p>   Django требует эту папку, потому что при разработке больших проектов приложений может быть много, и внутри каждого приложения будет создана папка templates. При работе Django будет как бы объединять все эти папки в одну.
+    Тогда файлы с одинаковыми названиями будут путаться (index.html во всех приложениях, например).
+</p>
+<div style="background-color: #f9f9f9; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+<pre>
+from django.shortcuts import render
+from django.http import HttpResponse
+def index(request):
+    return render(request, 'main/index.html')
+</pre>
+</div>
+
+
+{% endblock %}
