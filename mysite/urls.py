@@ -8,4 +8,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # подключаем маршруты из моего приложения:
     path('', include('myapp.urls')),
+    path('news/', include('news.urls'))
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

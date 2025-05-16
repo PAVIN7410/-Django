@@ -18,3 +18,4 @@ def page3(request):
 
 def page4(request):
     return render(request, 'myapp/page4.html')
+

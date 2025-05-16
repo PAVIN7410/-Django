@@ -16,10 +16,9 @@
 
 
     {% include 'myapp/menu.html' %}  <!-- меню -->
+    {% url 'news' %}
     <div class="container mt-4">
         {% block content %}
-
-
         {% endblock %}
     </div>
 
